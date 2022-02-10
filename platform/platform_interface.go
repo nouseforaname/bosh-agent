@@ -54,6 +54,7 @@ type Platform interface {
 	SetupIPv6(boshsettings.IPv6) error
 	SetupHostname(hostname string) (err error)
 	SetupNetworking(networks boshsettings.Networks) (err error)
+	SetupNatsFirewall(settings boshsettings.Settings) (err error)
 	SetupLogrotate(groupName, basePath, size string) (err error)
 	SetTimeWithNtpServers(servers []string) (err error)
 	SetupEphemeralDiskWithPath(devicePath string, desiredSwapSizeInBytes *uint64, labelPrefix string) (err error)

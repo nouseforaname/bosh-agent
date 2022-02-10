@@ -212,7 +212,9 @@ func (p linux) GetAuditLogger() AuditLogger {
 func (p linux) SetupNetworking(networks boshsettings.Networks) (err error) {
 	return p.netManager.SetupNetworking(networks, nil)
 }
-
+func (p linux) SetupNatsFirewall(settings boshsettings.Settings) (err error) {
+	return p.netManager.SetupNatsFirewall(settings)
+}
 func (p linux) GetConfiguredNetworkInterfaces() ([]string, error) {
 	return p.netManager.GetConfiguredNetworkInterfaces()
 }

@@ -98,6 +98,9 @@ func (boot bootstrap) Run() (err error) {
 	if err = boot.platform.SetupNetworking(settings.Networks); err != nil {
 		return bosherr.WrapError(err, "Setting up networking")
 	}
+	if err = boot.platform.SetupNatsFirewall(settings); err != nil {
+		return bosherr.WrapError(err, "Setting up networking")
+	}
 
 	if err = boot.platform.SetupRawEphemeralDisks(settings.RawEphemeralDiskSettings()); err != nil {
 		return bosherr.WrapError(err, "Setting up raw ephemeral disk")

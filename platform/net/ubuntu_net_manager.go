@@ -63,6 +63,10 @@ func NewUbuntuNetManager(
 	}
 }
 
+func (net UbuntuNetManager) SetupNatsFirewall(settings boshsettings.Settings) error {
+
+	return nil
+}
 func (net UbuntuNetManager) GetConfiguredNetworkInterfaces() ([]string, error) {
 	interfaces := []string{}
 

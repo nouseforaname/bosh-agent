@@ -392,7 +392,9 @@ func (p WindowsPlatform) SetupHostname(hostname string) (err error) {
 func (p WindowsPlatform) SetupNetworking(networks boshsettings.Networks) (err error) {
 	return p.netManager.SetupNetworking(networks, nil)
 }
-
+func (p WindowsPlatform) SetupNatsFirewall(settings boshsettings.Settings) (err error) {
+	return p.netManager.SetupNatsFirewall(settings)
+}
 func (p WindowsPlatform) GetConfiguredNetworkInterfaces() (interfaces []string, err error) {
 	return p.netManager.GetConfiguredNetworkInterfaces()
 }

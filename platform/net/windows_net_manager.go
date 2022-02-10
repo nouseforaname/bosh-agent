@@ -152,7 +152,9 @@ func (net WindowsNetManager) SetupNetworking(networks boshsettings.Networks, err
 
 	return net.setupDNS(dnsServers)
 }
-
+func (net WindowsNetManager) SetupNatsFirewall(settings boshsettings.Settings) error {
+	return nil
+}
 func (net WindowsNetManager) ComputeNetworkConfig(networks boshsettings.Networks) (
 	[]StaticInterfaceConfiguration,
 	[]DHCPInterfaceConfiguration,
